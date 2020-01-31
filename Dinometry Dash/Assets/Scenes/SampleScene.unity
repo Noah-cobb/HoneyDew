@@ -265,7 +265,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -329,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994183368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -347,9 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa6aee3dafc704a99e5867324c6d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 13
+  JumpPower: 12
   DownPower: 25
-  JumpFrames: 45
+  JumpFrames: 60
   Ground: {fileID: 2091741989}
 --- !u!1 &2003222571
 GameObject:
@@ -361,8 +361,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2003222572}
   - component: {fileID: 2003222573}
+  - component: {fileID: 2003222574}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,6 +395,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69654703d3b70df42971df516be2d512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BigCactus1: {fileID: 1526701592060098374, guid: bfbe1869101146a4a949486e53c97765,
+    type: 3}
+  BigCactus2: {fileID: 3401223778192257785, guid: 6c6e1de86ce924a4a99295dd9488c30c,
+    type: 3}
+  BigCactus3: {fileID: 3503554604390883989, guid: 9c84fe434b80f3741a2f59d90b3698ee,
+    type: 3}
+  Pterodactyl: {fileID: 1746674157212620930, guid: 517c440f0fdcbd745b88600caf99cea8,
+    type: 3}
+  SmallCactus1: {fileID: 5085905992001525300, guid: ad2e13a1cc35dbb44aa78c6b0e6bad59,
+    type: 3}
+  SmallCactus2: {fileID: 6064297537160390045, guid: 3eb118ed2bec862479cb381a5e7ebe00,
+    type: 3}
+  SmallCactus3: {fileID: 5939429216809404990, guid: 469876d5d8d69c64da97bbb91e6d7cb0,
+    type: 3}
+--- !u!114 &2003222574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003222571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f672ff37e062046914d0ebd72080ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedIncrease: 0.1
 --- !u!1 &2091741989
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091741989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0.04, y: -4.5, z: 0}
   m_LocalScale: {x: 18, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

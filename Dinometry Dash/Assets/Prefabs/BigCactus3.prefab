@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3503554604390883979}
   - component: {fileID: 3503554604390883988}
+  - component: {fileID: -3435594705725245750}
   m_Layer: 0
   m_Name: BigCactus3
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3503554604390883989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.135, y: -2.799, z: -0.044921875}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1.7051727, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,3 +82,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3435594705725245750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503554604390883989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27497b9d14c722448b41894c5d3a8000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
