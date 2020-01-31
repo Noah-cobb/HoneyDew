@@ -347,6 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa6aee3dafc704a99e5867324c6d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpPower: 13
+  DownPower: 25
+  JumpFrames: 45
   Ground: {fileID: 2091741989}
 --- !u!1 &2091741989
 GameObject:
