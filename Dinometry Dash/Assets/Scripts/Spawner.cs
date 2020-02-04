@@ -53,8 +53,14 @@ public class Spawner : MonoBehaviour
                     obj = Pterodactyl;
                     break;
             }
-
-            Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
+            if (id < 6)
+            {
+                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
+            }
         }
     }
 }
