@@ -17,7 +17,7 @@ public class EndShower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 0)
+        if(Time.timeScale == 0 && Time.time > 0.1)
         {
             trans.position = new Vector3(0, 0, 0);
         }
