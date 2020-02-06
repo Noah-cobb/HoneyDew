@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         untilNext -= Time.deltaTime;
         if (untilNext <= 0) {
-            untilNext = Random.Range(1, 3);
+            untilNext = Random.Range(1.5f, 4);
             GameObject obj = null;
             int id = (int)(Random.value * 7);
             switch (id)
@@ -55,11 +55,11 @@ public class Spawner : MonoBehaviour
             }
             if (id < 6)
             {
-                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
             }
             else
             {
-                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
             }
         }
     }

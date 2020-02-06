@@ -15,6 +15,7 @@ public class DinoJump : MonoBehaviour
     public Sprite[] Crouching;
     public Sprite Oof;
 
+    public GameObject sword;
 
     int animState;
     float subState;
@@ -103,6 +104,10 @@ public class DinoJump : MonoBehaviour
             {
                 jfs--;
                 rb.velocity = new Vector2(0, JumpPower);
+                if(animState != STANDING)
+                {
+                    sword.GetComponent<Sword>().slash();
+                }
                 setAnim(STANDING);
             }
             else
