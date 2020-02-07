@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DinoJump : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class DinoJump : MonoBehaviour
     public float DownPower;
     public int JumpFrames;
 
+    public AudioClip[] jumpClips;
+    private RandomContainer randomC;
+
+
     int jfs;
 
     bool changedAnim;
@@ -44,6 +49,8 @@ public class DinoJump : MonoBehaviour
         jfs = 0;
         setAnim(RUNNING);
         subState = 0;
+
+        randomC = GetComponent<RandomContainer>();
         
     }
 
@@ -101,13 +108,16 @@ public class DinoJump : MonoBehaviour
                     setAnim(RUNNING);
                 }
             }
+            //jump
             if (jfs > 0 && Input.GetKey("space"))
             {
                 jfs--;
                 rb.velocity = new Vector2(0, JumpPower);
                 if(animState != STANDING)
                 {
-                    GetComponent<AudioSource>().Play();
+                    //GetComponent<AudioSource>().Play();
+                    randomC.clips = jumpClips;
+                    randomC.PlaySound();
                     sword.GetComponent<Sword>().slash();
                     
                 }
