@@ -16,7 +16,7 @@ public class CloudMove : MonoBehaviour
     {
         para = Random.Range(3f, 10f);
         trans = GetComponent<Transform>();
-        float scale = 5 / para;
+        float scale = 0.25f / para;
         gameObject.transform.localScale = new Vector3(scale, scale, scale);
     }
 
