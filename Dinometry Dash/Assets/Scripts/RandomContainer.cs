@@ -9,17 +9,18 @@ public class RandomContainer : MonoBehaviour
 
     public AudioClip[] clips;
     public AudioMixerGroup output;
-    public KeyCode keyToPress = KeyCode.Space;
-
+    //public KeyCode keyToPress = KeyCode.Space;
+    public float minPitch = 0.75f;
+    public float maxPitch = 1.25f;
 
     // Update is called once per frame
     void Update()
     {
         //default playback method for testing
-        if (Input.GetKeyDown(keyToPress))
+        /*if (Input.GetKeyDown(keyToPress))
         {
             PlaySound();
-        }
+        }*/
 
     }
     public void PlaySound()
@@ -32,6 +33,8 @@ public class RandomContainer : MonoBehaviour
 
         //load clip into audiosource
         source.clip = clips[randomClip];
+
+        source.pitch = Random.Range(minPitch, maxPitch);
 
         //set output for audiosource 
         source.outputAudioMixerGroup = output;
