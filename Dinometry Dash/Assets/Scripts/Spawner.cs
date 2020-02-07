@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     public GameObject SmallCactus1;
     public GameObject SmallCactus2;
     public GameObject SmallCactus3;
+    public GameObject Cloud;
 
     float untilNext;
 
@@ -24,9 +25,15 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Clouds
+        if(Random.value < 0.003)
+        {
+            Instantiate(Cloud, new Vector2(Random.Range(22, 21f), Random.Range(-3f, 5f)), Quaternion.identity);
+        }
+        //Obstacles
         untilNext -= Time.deltaTime;
         if (untilNext <= 0) {
-            untilNext = Random.Range(1, 3);
+            untilNext = Random.Range(0.75f, 2);
             GameObject obj = null;
             int id = (int)(Random.value * 7);
             switch (id)
@@ -55,11 +62,11 @@ public class Spawner : MonoBehaviour
             }
             if (id < 6)
             {
-                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
             }
             else
             {
-                Instantiate(obj, new Vector2(10, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
             }
         }
     }

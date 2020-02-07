@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
 
-    public static float Speed = 8;
+    public static float Speed = 18;
     public float SpeedAddMult = 1;
 
     float speedAdd;
@@ -22,7 +22,7 @@ public class ObstacleMovement : MonoBehaviour
     void Update()
     {
         trans.position += new Vector3((speedAdd - Speed) * Time.deltaTime, 0);
-        if(trans.position.x < -10)
+        if(trans.position.x < -22)
         {
             Destroy(gameObject);
         }

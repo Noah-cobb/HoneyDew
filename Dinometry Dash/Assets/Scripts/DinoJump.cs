@@ -9,12 +9,13 @@ public class DinoJump : MonoBehaviour
     const int RUNNING = 1;
     const int CROUCHING = 2;
     const int OOF = 3;
-
+    
     public Sprite Standing;
     public Sprite[] Running;
     public Sprite[] Crouching;
     public Sprite Oof;
 
+    public GameObject sword;
 
     int animState;
     float subState;
@@ -43,6 +44,7 @@ public class DinoJump : MonoBehaviour
         jfs = 0;
         setAnim(RUNNING);
         subState = 0;
+        
     }
 
     void doAnim()
@@ -103,6 +105,12 @@ public class DinoJump : MonoBehaviour
             {
                 jfs--;
                 rb.velocity = new Vector2(0, JumpPower);
+                if(animState != STANDING)
+                {
+                    GetComponent<AudioSource>().Play();
+                    sword.GetComponent<Sword>().slash();
+                    
+                }
                 setAnim(STANDING);
             }
             else
