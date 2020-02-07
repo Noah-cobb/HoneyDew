@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
 
-    public static float Speed = 8;
+    public static float Speed = 18;
     public float SpeedAddMult = 1;
 
     float speedAdd;

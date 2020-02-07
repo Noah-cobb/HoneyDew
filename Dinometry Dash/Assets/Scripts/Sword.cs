@@ -48,6 +48,7 @@ public class Sword : MonoBehaviour
     {
         if (col.gameObject.layer == 8)
         {
+            Controller.score += 100;
             Destroy(col.gameObject);
         }
     }
