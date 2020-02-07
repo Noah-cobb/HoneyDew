@@ -62,11 +62,11 @@ public class Spawner : MonoBehaviour
             }
             if (id < 6)
             {
-                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(ObstacleMovement.Speed / 2 + 22, -2), Quaternion.identity);
             }
             else
             {
-                Instantiate(obj, new Vector2(22, obj.transform.localScale.y / 2 - 4 + Random.value * 4), Quaternion.identity);
+                Instantiate(obj, new Vector2(22, -2 + Random.value * 4), Quaternion.identity);
             }
         }
     }
