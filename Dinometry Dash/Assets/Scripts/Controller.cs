@@ -27,7 +27,7 @@ public class Controller : MonoBehaviour
     {
         ObstacleMovement.Speed += SpeedIncrease * Time.deltaTime;
         score += ObstacleMovement.Speed * Time.deltaTime;
-        ScoreText.text = "Score: " + (int) score + "\nHigh Score: " + (int) HighScoreHolder.highScore;
+        ScoreText.text = "HighScore: " + (int) HighScoreHolder.highScore + "\nScore: " + (int) score;
 
         if (score >= target)
         {
