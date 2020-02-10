@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class DinoKill : MonoBehaviour
 {
-
+    
     int framesLeft;
+    
+    public AudioClip DinoOof;
+    AudioSource source;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        source = gameObject.AddComponent<AudioSource>();
         framesLeft = 120;
         Time.timeScale = 1;
     }
@@ -37,7 +43,8 @@ public class DinoKill : MonoBehaviour
         if(col.gameObject.layer == 8)
         {
             Time.timeScale = 0;
-            
+            source.clip = DinoOof;
+            source.Play();
         }
     }
 }

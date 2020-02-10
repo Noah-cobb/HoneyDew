@@ -10,7 +10,9 @@ public class DinoJump : MonoBehaviour
     const int RUNNING = 1;
     const int CROUCHING = 2;
     const int OOF = 3;
-    
+    public AudioClip DinoJumpp;
+    AudioSource source;
+
     public Sprite Standing;
     public Sprite[] Running;
     public Sprite[] Crouching;
@@ -25,8 +27,7 @@ public class DinoJump : MonoBehaviour
     public float DownPower;
     public int JumpFrames;
 
-    public AudioClip[] jumpClips;
-    private RandomContainer randomC;
+   
 
 
     int jfs;
@@ -50,8 +51,8 @@ public class DinoJump : MonoBehaviour
         setAnim(RUNNING);
         subState = 0;
 
-        randomC = GetComponent<RandomContainer>();
-        
+        source = gameObject.AddComponent<AudioSource>();
+
     }
 
     void doAnim()
@@ -115,11 +116,10 @@ public class DinoJump : MonoBehaviour
                 rb.velocity = new Vector2(0, JumpPower);
                 if(animState != STANDING)
                 {
-                    //GetComponent<AudioSource>().Play();
-                    randomC.clips = jumpClips;
-                    randomC.PlaySound();
+                   
                     sword.GetComponent<Sword>().slash();
-                    
+                    source.clip = DinoJumpp;
+                    source.Play();
                 }
                 setAnim(STANDING);
             }
