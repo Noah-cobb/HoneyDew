@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
             }
             if (id < 6)
             {
-                Instantiate(obj, new Vector2(ObstacleMovement.Speed / 2 + 22, -2), Quaternion.identity);
+                Instantiate(obj, new Vector2(ObstacleMovement.Speed / 2 + 24, 0), Quaternion.identity);
             }
             else
             {
