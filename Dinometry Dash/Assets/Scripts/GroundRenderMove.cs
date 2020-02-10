@@ -21,7 +21,7 @@ public class GroundRenderMove : MonoBehaviour
         trans.position = new Vector2(trans.position.x - ObstacleMovement.Speed * Time.deltaTime, trans.position.y);
         if(trans.position.x < EndPos)
         {
-            trans.position = new Vector2(StartPos, trans.position.y);
+            trans.position = new Vector2(trans.position.x + (StartPos - EndPos), trans.position.y);
         }
     }
 }

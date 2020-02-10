@@ -26,9 +26,9 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         //Clouds
-        if(Random.value < 0.003)
+        if(Random.value < 0.0015)
         {
-            Instantiate(Cloud, new Vector2(Random.Range(22, 21f), Random.Range(-3f, 5f)), Quaternion.identity);
+            Instantiate(Cloud, new Vector2(Random.Range(22, 21f), Random.Range(-1f, 5f)), Quaternion.identity);
         }
         //Obstacles
         untilNext -= Time.deltaTime;
