@@ -157,7 +157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.2264151, g: 0.0758277, b: 0.0758277, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -261,8 +261,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 40eb00e33bb5f2d46bb076719d2ed7b4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
+  m_Sprite: {fileID: 21300000, guid: 24a31dc2ae8fe8443958c69eb9ef0d44, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -467,7 +467,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 40eb00e33bb5f2d46bb076719d2ed7b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -584,8 +584,7 @@ GameObject:
   - component: {fileID: 1362010897}
   - component: {fileID: 1362010898}
   - component: {fileID: 1362010899}
-  - component: {fileID: 1362010900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dinosword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,13 +598,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362010895}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5735764, w: 0.8191521}
   m_LocalPosition: {x: 0, y: -7, z: 0}
-  m_LocalScale: {x: 2.5, y: 0.2, z: 1}
+  m_LocalScale: {x: 3, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70}
 --- !u!212 &1362010897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -613,7 +612,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362010895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -646,7 +645,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 71aaab901af5a874ab628ee52098592e, type: 3}
-  m_Color: {r: 0.47647902, g: 1, b: 0.24056602, a: 1}
+  m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -663,14 +662,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362010895}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6394d19422639f42ad9c772241ec380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dino: {fileID: 1994183368}
---- !u!61 &1362010899
-BoxCollider2D:
+--- !u!60 &1362010899
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -692,30 +691,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &1362010900
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362010895}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.024801558, y: -4.520976}
+      - {x: -0.5, y: -0.5}
+      - {x: -0.5, y: 0.5}
+      - {x: 0.67000335, y: 2.0033317}
+      - {x: 0.64005655, y: -2.2200007}
 --- !u!1 &1491689872
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,37 +802,19 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 5.2}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.7, y: 2.7}
+    newSize: {x: 1.7, y: 2.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.57, y: -0.59999996}
-      - {x: 0.87, y: -0.099999994}
-      - {x: 1.0699999, y: 0.29999998}
-      - {x: 1.27, y: 0.5}
-      - {x: 1.27, y: 1.13}
-      - {x: 1.18, y: 1.22}
-      - {x: 0.14999999, y: 1.22}
-      - {x: 0.03, y: 1.13}
-      - {x: -0.089999996, y: 0.53}
-      - {x: -0.26, y: 0.44}
-      - {x: -0.45999998, y: 0.34}
-      - {x: -0.64, y: 0.32999998}
-      - {x: -0.74, y: 0.53}
-      - {x: -1.05, y: 0.52}
-      - {x: -1.0699999, y: 0.5}
-      - {x: -1.0699999, y: -0.29999998}
-      - {x: -0.98999995, y: -0.41}
-      - {x: -0.59, y: -0.81}
-      - {x: -0.51, y: -0.85999995}
-      - {x: -0.47, y: -1.22}
-      - {x: 0.47, y: -1.22}
-      - {x: 0.48999998, y: -0.89}
-      - {x: 0.38, y: -0.85999995}
+    - - {x: 0, y: 2.6}
+      - {x: -2.4727468, y: 0.8034441}
+      - {x: -1.5282414, y: -2.1034443}
+      - {x: 1.5282419, y: -2.1034439}
+      - {x: 2.4727468, y: 0.8034445}
 --- !u!50 &1994183370
 Rigidbody2D:
   serializedVersion: 4
@@ -911,12 +875,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 846579d8c0c11674f91e429c930c310e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55d094003f212d841b37990e1cdceaed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7, y: 2.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -949,16 +913,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DinoJumpp: {fileID: 8300000, guid: 139c65226820f5a429cac03ee902fe20, type: 3}
-  Standing: {fileID: 21300000, guid: 846579d8c0c11674f91e429c930c310e, type: 3}
+  Standing: {fileID: 21300000, guid: e471df6635d43474a95a72e187b82ff2, type: 3}
   Running:
-  - {fileID: 21300000, guid: 21c657dea22faea46b4c9482ef946b41, type: 3}
-  - {fileID: 21300000, guid: 05f30cc5c8d30cf4e9f59166a85e3aee, type: 3}
-  Crouching:
-  - {fileID: 21300000, guid: 787671aeb8ff2aa4198546f386d1f9da, type: 3}
-  - {fileID: 21300000, guid: 5832a7611c1e5fe40a35732d19e2a2de, type: 3}
-  Oof: {fileID: 21300000, guid: 136f9c478d12a1244b7adb362ac6cc6e, type: 3}
+  - {fileID: 21300000, guid: e94c0d0544cf8f94286e6e72dba8c157, type: 3}
+  - {fileID: 21300000, guid: 142af50a1aee2c94fa7b3fa2fbf965ab, type: 3}
+  - {fileID: 21300000, guid: 02ed6003520e40342b73e94d82b1ae53, type: 3}
+  - {fileID: 21300000, guid: f852ead1d9bb7c54ca3478d58947059c, type: 3}
+  - {fileID: 21300000, guid: e52cefbd709652d4486dfff1f4fe1d24, type: 3}
+  - {fileID: 21300000, guid: 3ff7e626fb036014f94d8e4ab59e2792, type: 3}
+  Jumping:
+  - {fileID: 21300000, guid: fb007099b4c43d443911f6d98eb4d1af, type: 3}
+  - {fileID: 21300000, guid: eb454fc4999cee140b42af9567fe2ee3, type: 3}
+  - {fileID: 21300000, guid: 60898401d41e3a842b1fa0f4eec9083e, type: 3}
+  Oof: {fileID: 21300000, guid: 77343cad860d7294f85e130dd550dd28, type: 3}
   sword: {fileID: 1362010895}
-  JumpPower: 24
+  animState: 0
+  JumpPower: 28
   DownPower: 25
   JumpFrames: 20
   Ground: {fileID: 2091741989}
@@ -1274,7 +1244,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 71aaab901af5a874ab628ee52098592e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.22745098, g: 0.07450981, b: 0.07450981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

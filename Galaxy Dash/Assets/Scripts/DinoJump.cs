@@ -8,19 +8,19 @@ public class DinoJump : MonoBehaviour
 
     const int STANDING = 0;
     const int RUNNING = 1;
-    const int CROUCHING = 2;
+    public const int JUMPING = 2;
     const int OOF = 3;
     public AudioClip DinoJumpp;
     AudioSource source;
 
     public Sprite Standing;
     public Sprite[] Running;
-    public Sprite[] Crouching;
+    public Sprite[] Jumping;
     public Sprite Oof;
 
     public GameObject sword;
 
-    int animState;
+    public int animState;
     float subState;
 
     public float JumpPower;
@@ -65,11 +65,15 @@ public class DinoJump : MonoBehaviour
                 break;
             case RUNNING:
                 sr.sprite = Running[(int) subState];
-                subState = (subState + Time.deltaTime * 8) % Running.Length;
+                subState = (subState + Time.deltaTime * 24) % Running.Length;
                 break;
-            case CROUCHING:
-                sr.sprite = Crouching[(int) subState];
-                subState = (subState + Time.deltaTime * 8) % Crouching.Length;
+            case JUMPING:
+                sr.sprite = Jumping[(int) subState];
+                updateCollider();
+                if (subState < Jumping.Length - 1)
+                {
+                    subState = (subState + Time.deltaTime * 24);
+                }
                 break;
             case OOF:
                 sr.sprite = Oof;
@@ -78,15 +82,23 @@ public class DinoJump : MonoBehaviour
         }
     }
 
-    void setAnim(int state)
+    void updateCollider()
     {
-        if (!changedAnim && animState != state)
+        if (!changedAnim)
         {
-            changedAnim = true;
-            animState = state;
-            doAnim();
             Destroy(GetComponent<PolygonCollider2D>());
             gameObject.AddComponent<PolygonCollider2D>();
+            changedAnim = true;
+        }
+    }
+
+    void setAnim(int state)
+    {
+        if (animState != state)
+        {
+            updateCollider();
+            animState = state;
+            doAnim();
         }
     }
 
@@ -99,33 +111,31 @@ public class DinoJump : MonoBehaviour
             dinoCol = GetComponent<Collider2D>();
             if (dinoCol.IsTouching(groundCol))
             {
-                if (Input.GetKey("down"))
-                {
-                    setAnim(CROUCHING);
-                }
-                else
-                {
-                    jfs = JumpFrames;
-                    setAnim(RUNNING);
-                }
+                jfs = JumpFrames;
+                setAnim(RUNNING);
             }
             //jump
             if (jfs > 0 && Input.GetKey("space"))
             {
                 jfs--;
                 rb.velocity = new Vector2(0, JumpPower);
-                if(animState != STANDING)
+                if(animState == RUNNING)
                 {
-                   
-                    sword.GetComponent<Sword>().slash();
+                    animState = JUMPING;
                     source.clip = DinoJumpp;
                     source.Play();
+                    subState = 0;
                 }
-                setAnim(STANDING);
+                
+                setAnim(JUMPING);
             }
             else
             {
-                jfs = 0;
+                if (animState != RUNNING && rb.velocity.y < 0)
+                {
+                    setAnim(STANDING);
+                    jfs = 0;
+                }
             }
             if (Input.GetKey("down"))
             {
