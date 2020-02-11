@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8486237455351275987}
   - component: {fileID: 6365567478739012946}
   - component: {fileID: -4025899852726943103}
+  - component: {fileID: 7414068304576492740}
   m_Layer: 8
   m_Name: Pterodactyle
   m_TagString: Untagged
@@ -170,3 +171,24 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: e27ee0212b5b6ac4886357f9a54697b3, type: 3}
   - {fileID: 21300000, guid: a99afe2a5aae846499d7e75b4c36aec3, type: 3}
+--- !u!50 &7414068304576492740
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746674157212620930}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
