@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eb45391c0516e49ac842f9cde616b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DinoOof: {fileID: 8300000, guid: dc2e4b8bacf810b4683c4e44ecbdebb6, type: 3}
+  DinoOof: {fileID: 8300000, guid: ef9d6d5d5a6ef06418d814d55d11d7f6, type: 3}
 --- !u!1 &2003222571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1218764666}
   SpeedIncrease: 0.3
-  DinoScore: {fileID: 0}
+  DinoScore: {fileID: 8300000, guid: 1d656528265c23a459982c51338dd7c2, type: 3}
 --- !u!82 &2003222575
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1031,11 +1031,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0cc5ac8b7dbc99e49b526010cabea2c9,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 139c65226820f5a429cac03ee902fe20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5ab3551731376b4428a7c69390f4f3c5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
