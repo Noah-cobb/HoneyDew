@@ -33,6 +33,7 @@ public class DinoKill : MonoBehaviour
                 {
                     HighScoreHolder.highScore = Controller.score;
                 }
+                ObstacleMovement.Speed = 18;
                 SceneManager.LoadScene("MainScene");
             }
         }
