@@ -527,7 +527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 732, y: 114}
+  m_AnchoredPosition: {x: 158, y: -13}
   m_SizeDelta: {x: 421, y: 245.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218764666
@@ -550,10 +550,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 64
     m_Alignment: 2
     m_AlignByGeometry: 0
@@ -694,6 +694,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.024801558, y: -4.520976}
+      - {x: -0.29622054, y: -4.3684206}
       - {x: -0.5, y: -0.5}
       - {x: -0.5, y: 0.5}
       - {x: 0.67000335, y: 2.0033317}
